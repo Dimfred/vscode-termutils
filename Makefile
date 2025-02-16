@@ -2,6 +2,8 @@
 
 all: help
 
+PACKAGE_NAME := termutils
+
 build: ## build extension
 	tsc
 	node ./esbuild.js --production
@@ -9,7 +11,7 @@ build: ## build extension
 publish: build ## publish extension
 	node -e 'let pkg=require("./package.json"); let v=pkg.version.split("."); v[2]++; pkg.version=v.join("."); require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 4)); console.log(pkg.version);' > .version
 	npx vsce package -o dist/
-	npx vsce publish -i dist/vscode-twm-`cat .version`.vsix
+	npx vsce publish -i dist/$(PACKAGE_NAME)-`cat .version`.vsix
 	rm .version
 
 login: ## login into azure
