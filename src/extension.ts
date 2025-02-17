@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 
+const cout = vscode.window.createOutputChannel("termutils");
+
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "termutils.currentTerminalMoveDown",
@@ -20,10 +22,6 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 async function focusTerminalByName(names?: string[]) {
-  const cout = vscode.window.createOutputChannel("termutils");
-  // cout.appendLine("Focus terminal by name");
-  // cout.appendLine(`Provided names: ${names}`);
-
   if (!names || names.length === 0) return;
 
   const activeTerminal = vscode.window.activeTerminal;
@@ -50,12 +48,10 @@ async function focusTerminalByName(names?: string[]) {
 }
 
 async function currentTerminalMoveDown() {
-  const cout = vscode.window.createOutputChannel("termutils");
   cout.appendLine("Not implemented yet");
 }
 
 async function currentTerminalMoveUp() {
-  const cout = vscode.window.createOutputChannel("termutils");
   cout.appendLine("Not implemented yet");
 }
 

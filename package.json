@@ -2,7 +2,7 @@
     "name": "termutils",
     "displayName": "termutils",
     "description": "A collection of utils for the integrated terminal",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "dimfred",
     "engines": {
         "vscode": "^1.97.0"
