@@ -45,6 +45,9 @@ async function focusTerminalByName(names?: string[]) {
       return;
     }
   }
+
+  const newTerminal = vscode.window.createTerminal();
+  newTerminal.show();
 }
 
 async function currentTerminalMoveDown() {
